@@ -1,3 +1,6 @@
-#osが自動生成したファイルをgit管理から外すために記入
+# OSが自動生成するファイル
 .DS_Store
-Thumbs.db
+ 
+# ダンプファイル
+/twitter_clone_backup.sql
+/twitter_clone_testdata.sql

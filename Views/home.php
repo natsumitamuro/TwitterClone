@@ -10,15 +10,14 @@
 <body class="home">
     <div class="container">
         <?php include_once('../Views/common/side.php'); ?>
+ 
         <div class="main">
             <div class="main-header">
                 <h1>ホーム</h1>
             </div>
- 
-            <!-- つぶやき投稿エリア -->
             <div class="tweet-post">
                 <div class="my-icon">
-                    <img src="<?php echo HOME_URL; ?>Views/img_uploaded/user/sample-person.jpg" alt="">
+                    <img src="<?php echo htmlspecialchars($view_user['image_path']); ?>" alt="">
                 </div>
                 <div class="input-area">
                     <form action="post.php" method="post" enctype="multipart/form-data">
@@ -33,12 +32,10 @@
                 </div>
             </div>
  
-            <!-- 仕切りエリア -->
             <div class="ditch"></div>
  
-            <!-- つぶやき一覧エリア -->
             <?php if (empty($view_tweets)) : ?>
-                <p class="p-3">ツイートがありません</p>
+                <p class="p-3">ツイートがまだありません</p>
             <?php else : ?>
                 <div class="tweet-list">
                     <?php foreach ($view_tweets as $view_tweet) : ?>
@@ -48,6 +45,7 @@
             <?php endif; ?>
         </div>
     </div>
+ 
     <?php include_once('../Views/common/foot.php'); ?>
 </body>
  
